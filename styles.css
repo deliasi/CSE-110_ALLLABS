@@ -1,5 +1,15 @@
-#section2 img {
-    width: 100%; 
+#section2 img{
+    max-width: 100%; 
+}
+
+#section1 img {
+    max-width: 100%; 
+}
+
+img {
+    margin: 20px auto;
+    max-width: 100%; 
+    height: auto; 
 }
 
 #navbar {
@@ -51,6 +61,7 @@
 .section2-bg {
     background-image: url('https://www.ucsd.edu/_resources/img/bg-orbs-1.jpg');
     background-size: cover;
+    max-width: 100%;
     background-position: center;
     color: #FFFFFF; 
 }
@@ -63,46 +74,152 @@ div {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);  
-    grid-gap: 25px; 
-    justify-items: center;  
-    align-items: start;
-    padding: 20px;
-}
+    grid-auto-flow: column; 
+    height: 400px;
+    align-content: center;
+    align-content: space-evenly;
+    column-gap: 40px;
+ }
+ 
 
-.grid-item {
-    background-color: #182b49;
+.grid-item1{
+    overflow: hidden;
+    background-color: #182B49;
     color: white;
     padding: 20px;
-    max-height: 500px;
-    overflow-y: scroll;  
-    width: 100%; 
+
+    overflow-y: scroll;
     box-sizing: border-box;
+    width: 100%; 
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+.grid-item2{
+    overflow: hidden;
+    background-color: #182B49;
+    color: white;
+    padding: 20px;
+
+    overflow-y: scroll;
+    box-sizing: border-box;
+    width: 100%; 
 }
+
+.grid-item3{
+    overflow: hidden;
+    background-color: #182B49;
+    color: white;
+    padding: 20px;
+
+    overflow-y: scroll;
+    box-sizing: border-box;
+    width: 100%; 
+}
+
+.grid-item4{
+    overflow: hidden;
+    background-color: #182B49;
+    color: white;
+    padding: 20px;
+
+    overflow-y: scroll;
+    box-sizing: border-box;
+    width: 100%; 
+}
+
+
+p {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+
 
 @media screen and (max-width: 800px) {
     #navbar ul {
         display: none;
     }
+
+    /* Change the grid to 2 columns on smaller screens */
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-auto-flow: column;
+        column-count: 2;   
+        height: 400px;
+        align-content: center;
+        align-content: space-evenly;
+        column-gap: 40px;
+        row-gap: 40px;
+    }
+
+    .grid-item1{
+        overflow: hidden;
+        background-color: #182B49;
+        color: white;
+        padding: 20px;
+    
+        overflow-y: scroll;
+        width: 100%; 
+        column-gap: 40px;
+        row-gap: 40px;
+    }
+    
+    .grid-item2{
+        overflow: hidden;
+        grid-row: 1;
+        background-color: #182B49;
+        color: white;
+        padding: 20px;
+    
+        overflow-y: scroll;
+
+        width: 100%; 
+        column-gap: 40px;
+        row-gap: 40px;
+    }
+    
+    .grid-item3{
+        overflow: hidden;
+        grid-column: 1;
+        grid-row: 2;
+        background-color: #182B49;
+        color: white;
+        padding: 20px;
+    
+        overflow-y: scroll;
+        width: 100%; 
+        column-gap: 40px;
+        row-gap: 40px;
+    }
+    
+    .grid-item4{
+        overflow: hidden;
+        grid-column: 2;
+        grid-row: 2;
+        background-color: #182B49;
+        color: white;
+        padding: 20px;
+    
+        overflow-y: scroll;
+        width: 100%; 
+        column-gap: 40px;
+        row-gap: 40px;
+    }
+
+    /* Reduce padding in sections for smaller screens */
+    .section1-bg, .section2-bg {
+        padding: 20px;
+    }
+
     img {
         max-width: 75%;
-        height: auto;
     }
+
     h1 {
         font-size: 24px;
     }
 
     p {
         font-size: 20px;
-    }
-
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr); 
-        grid-gap: 15px; 
     }
 }
